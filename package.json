@@ -1,0 +1,19 @@
+{
+  "name": "gitbook-plugin-platform-tabs",
+  "version": "1.0.0",
+  "description": "Platform and language tabs for SDK documentation with support for Android, iOS, and HarmonyOS",
+  "main": "index.js",
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "tabs",
+    "platform",
+    "code"
+  ],
+  "engines": {
+    "gitbook": ">=3.0.0"
+  },
+  "dependencies": {
+    "marked": "^4.0.0"
+  }
+}

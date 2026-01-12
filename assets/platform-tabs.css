@@ -1,0 +1,327 @@
+/**
+ * Platform Tabs Plugin Styles
+ *
+ * Mintlify-inspired design with prism code highlighting
+ */
+
+/* ============================================
+   CSS Variables - Mintlify Theme
+   ============================================ */
+
+:root {
+    --pt-primary: #0969da;
+    --pt-primary-light: #ddf4ff;
+    --pt-bg: #ffffff;
+    --pt-bg-subtle: #f6f8fa;
+    --pt-border: #d0d7de;
+    --pt-border-light: #e8e8e8;
+    --pt-text: #1f2328;
+    --pt-text-secondary: #656d76;
+    --pt-radius: 8px;
+    --pt-radius-sm: 6px;
+    --pt-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================
+   Platform Tabs Container
+   ============================================ */
+
+.platform-tabs-container,
+.code-sample-container {
+    margin: 1.5em 0;
+    border-radius: var(--pt-radius);
+    overflow: hidden;
+    background: var(--pt-bg);
+    box-shadow: var(--pt-shadow);
+    border: 1px solid var(--pt-border-light);
+}
+
+/* ============================================
+   Platform Tab Headers - Mintlify Style
+   ============================================ */
+
+.platform-tabs-header {
+    display: flex;
+    background: var(--pt-bg-subtle);
+    padding: 4px;
+    margin: 0;
+    gap: 4px;
+    border-bottom: 1px solid var(--pt-border-light);
+}
+
+.platform-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--pt-radius-sm);
+    background: transparent;
+    color: var(--pt-text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.platform-tab:hover {
+    color: var(--pt-text);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.platform-tab.active {
+    color: var(--pt-primary);
+    background: var(--pt-bg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.platform-tab i {
+    font-size: 14px;
+}
+
+/* Platform-specific icon colors */
+.platform-tab[data-platform="Android"] i { color: #3ddc84; }
+.platform-tab[data-platform="iOS"] i { color: #000000; }
+.platform-tab[data-platform="HarmonyOS"] i { color: #e52828; }
+
+.platform-tab.active i {
+    color: inherit;
+}
+
+/* ============================================
+   Platform Tab Contents
+   ============================================ */
+
+.platform-tabs-content {
+    padding: 0;
+}
+
+.platform-content {
+    display: none;
+    padding: 20px;
+}
+
+.platform-content.active {
+    display: block;
+}
+
+/* ============================================
+   Language Tab Headers - Pill Style
+   ============================================ */
+
+.language-tabs-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.language-tab {
+    padding: 6px 14px;
+    border: 1px solid var(--pt-border);
+    border-radius: 20px;
+    background: var(--pt-bg);
+    color: var(--pt-text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.language-tab:hover {
+    border-color: var(--pt-primary);
+    color: var(--pt-primary);
+}
+
+.language-tab.active {
+    background: var(--pt-primary);
+    border-color: var(--pt-primary);
+    color: #fff;
+}
+
+/* ============================================
+   Language Tab Contents
+   ============================================ */
+
+.language-tabs-content {
+    /* Container for language content */
+}
+
+.language-content {
+    display: none;
+}
+
+.language-content.active {
+    display: block;
+}
+
+/* ============================================
+   Code Blocks - Layout Only (Prism controls colors)
+   ============================================ */
+
+.platform-content pre,
+.language-content pre {
+    margin: 0;
+    border-radius: var(--pt-radius);
+    overflow: hidden;
+    box-shadow: none;
+    border: none;
+}
+
+.platform-content pre code,
+.language-content pre code {
+    display: block;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: 'SF Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* Prism integration - layout only, colors from prism theme */
+.platform-content pre[class*="language-"],
+.language-content pre[class*="language-"] {
+    margin: 0;
+    padding: 0;
+    border-radius: var(--pt-radius);
+}
+
+.platform-content code[class*="language-"],
+.language-content code[class*="language-"] {
+    text-shadow: none;
+}
+
+/* ============================================
+   Typography within tabs
+   ============================================ */
+
+.platform-content p,
+.language-content p {
+    margin: 0.75em 0;
+    line-height: 1.7;
+    color: var(--pt-text);
+    font-size: 14px;
+}
+
+.platform-content p:first-child,
+.language-content p:first-child {
+    margin-top: 0;
+}
+
+.platform-content p:last-child,
+.language-content p:last-child {
+    margin-bottom: 0;
+}
+
+.platform-content code,
+.language-content code {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--pt-bg-subtle);
+    color: var(--pt-text);
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+.platform-content pre code,
+.language-content pre code {
+    padding: 16px 20px;
+    background: transparent !important;
+}
+
+/* ============================================
+   Error State
+   ============================================ */
+
+.platform-tabs-error {
+    padding: 16px 20px;
+    background: #fff8c5;
+    color: #9a6700;
+    border-radius: var(--pt-radius);
+    margin: 1em 0;
+    font-size: 14px;
+    border-left: 3px solid #d4a72c;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    .platform-tabs-header {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .platform-tabs-header::-webkit-scrollbar {
+        display: none;
+    }
+
+    .platform-tab {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .platform-content {
+        padding: 16px;
+    }
+
+    .language-tabs-header {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .language-tab {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+
+    .platform-content pre code,
+    .language-content pre code {
+        font-size: 12px;
+        padding: 12px 16px;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    .platform-tabs-container,
+    .code-sample-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .platform-tabs-header,
+    .language-tabs-header {
+        display: none;
+    }
+
+    .platform-content,
+    .language-content {
+        display: block !important;
+        padding: 10px;
+    }
+
+    .platform-content::before {
+        content: "Platform: " attr(data-platform);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        color: #666;
+    }
+
+    .language-content::before {
+        content: "Language: " attr(data-lang);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        color: #666;
+    }
+
+}
