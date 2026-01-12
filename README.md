@@ -58,27 +58,26 @@ gitbook install
 这是 Android 平台的内容。
 
 安装 SDK：
-```gradle
+// gradle
 implementation 'com.example:sdk:1.0.0'
-```
+
 <!-- /platform -->
 <!-- platform: iOS -->
 这是 iOS 平台的内容。
 
 安装 SDK：
-```ruby
+// ruby
 pod 'ExampleSDK', '~> 1.0.0'
-```
+
 <!-- /platform -->
 <!-- platform: HarmonyOS -->
 这是 HarmonyOS 平台的内容。
 
 安装 SDK：
-```json
+// json
 "dependencies": {
   "@example/sdk": "^1.0.0"
 }
-```
 <!-- /platform -->
 <!-- /platformtabs -->
 ```
@@ -91,42 +90,42 @@ pod 'ExampleSDK', '~> 1.0.0'
 <!-- codesample id="demo-2" -->
 <!-- platform: Android -->
 <!-- lang: Java -->
-```java
+// java
 public class Example {
     public void init() {
         SDK.init(context);
     }
 }
-```
+
 <!-- /lang -->
 <!-- lang: Kotlin -->
-```kotlin
+// kotlin
 class Example {
     fun init() {
         SDK.init(context)
     }
 }
-```
+
 <!-- /lang -->
 <!-- /platform -->
 <!-- platform: iOS -->
 <!-- lang: Objective-C -->
-```objc
+// objc
 @implementation Example
 - (void)init {
     [SDK initWithContext:context];
 }
 @end
-```
+
 <!-- /lang -->
 <!-- lang: Swift -->
-```swift
+// swift
 class Example {
     func initialize() {
         SDK.init(context: context)
     }
 }
-```
+
 <!-- /lang -->
 <!-- /platform -->
 <!-- /codesample -->
